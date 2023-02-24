@@ -6,7 +6,7 @@
 /*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 09:13:37 by douglas           #+#    #+#             */
-/*   Updated: 2023/02/24 09:14:55 by douglas          ###   ########.fr       */
+/*   Updated: 2023/02/24 18:54:24 by douglas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,9 @@ int	cheack_eat(t_info_philo *philo)
 		pthread_mutex_unlock(&philo->for_all->cheack_eat[i]);
 		i++;
 	}
+	pthread_mutex_lock(&philo[0].for_all->cheack_died);
+	philo[0].for_all->died = 1;
+	printf("FINISHED\n");
+	pthread_mutex_unlock(&philo[0].for_all->cheack_died);
 	return (1);
 }

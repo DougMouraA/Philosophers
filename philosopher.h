@@ -6,7 +6,7 @@
 /*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 09:05:55 by douglas           #+#    #+#             */
-/*   Updated: 2023/02/24 15:22:01 by douglas          ###   ########.fr       */
+/*   Updated: 2023/02/24 18:43:41 by douglas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int				cheack_eat(t_info_philo *philo);
 //Create
 void			creat_mutex(t_pd *cmutex);
 void			create_philos(int argc, char **argv, pthread_t *philo);
+void			destroy_mutex(t_pd *dmutex);
 
 //Initialize
 t_pd			*init_philo(int argc, char **argv);

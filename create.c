@@ -6,7 +6,7 @@
 /*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 09:15:23 by douglas           #+#    #+#             */
-/*   Updated: 2023/02/24 17:53:22 by douglas          ###   ########.fr       */
+/*   Updated: 2023/02/24 18:43:27 by douglas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	create_philos(int argc, char **argv, pthread_t *philo)
 		i++;
 	}
 	pthread_join(killer_thread, NULL);
+	destroy_mutex(philo_info);
 }
 
 void	destroy_mutex(t_pd *dmutex)
