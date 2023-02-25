@@ -6,7 +6,7 @@
 /*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 09:15:23 by douglas           #+#    #+#             */
-/*   Updated: 2023/02/24 18:43:27 by douglas          ###   ########.fr       */
+/*   Updated: 2023/02/25 11:49:49 by douglas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,3 @@ void	destroy_mutex(t_pd *dmutex)
 	pthread_mutex_destroy(&dmutex->printf);
 	pthread_mutex_destroy(&dmutex->cheack_died);
 }
- 

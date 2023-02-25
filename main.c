@@ -6,7 +6,7 @@
 /*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 09:12:33 by douglas           #+#    #+#             */
-/*   Updated: 2023/02/24 15:44:11 by douglas          ###   ########.fr       */
+/*   Updated: 2023/02/25 11:57:35 by douglas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int	main(int argc, char **argv)
 
 	if (argc != 5 && argc != 6)
 	{
-		printf("Too few arguments! Try again.");
+		printf("Too few arguments! Try again.\n");
 		return (0);
 	}
 	if (check_param(argc, argv) == 0)
 	{
-		printf("Wrong paramenters, please try again!");
+		printf("Wrong paramenters, please try again!\n");
 		return (0);
 	}
 	numphilo = ft_atoi(argv[1]);

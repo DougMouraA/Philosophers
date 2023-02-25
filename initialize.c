@@ -6,7 +6,7 @@
 /*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:45:24 by douglas           #+#    #+#             */
-/*   Updated: 2023/02/24 15:27:30 by douglas          ###   ########.fr       */
+/*   Updated: 2023/02/25 11:33:41 by douglas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ t_info_philo	*init_info(t_pd *philo_info)
 		id_philo[i].for_all = philo_info;
 		id_philo[i].id_philo = i;
 		id_philo[i].status = 42;
-		id_philo[i].left = (id_philo->id_philo + 1) \
+		id_philo[i].left = (id_philo[i].id_philo + 1) \
 			% id_philo->for_all->num_philo;
-		id_philo[i].right = id_philo->id_philo;
+		id_philo[i].right = id_philo[i].id_philo;
 		id_philo[i].first_time = philo_info->first_time;
 		id_philo[i].last_eat = 0;
 		id_philo[i].total_eat = 0;
@@ -73,6 +73,11 @@ void	get_forks(t_info_philo *philo)
 {
 	pthread_mutex_lock(&philo->for_all->forks[philo->left]);
 	mprint(*philo, 2);
+	if (philo->left == philo->right)
+	{
+		msleep(philo, (philo->for_all->time_to_die) * 2);
+		return ;
+	}
 	if (check_died(*philo->for_all) == 1)
 	{
 		pthread_mutex_unlock(&philo->for_all->forks[philo->left]);
