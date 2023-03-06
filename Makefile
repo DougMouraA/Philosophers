@@ -1,13 +1,20 @@
-#      NAME       #
-NAME		=	philo
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: douglas <douglas@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/03/02 14:52:37 by douglas           #+#    #+#              #
+#    Updated: 2023/03/02 14:54:21 by douglas          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-#      FLAGS      #
+NAME		=	philo
 
 CC			=	cc -pthread
 FLAGS		=	-Wall -Wextra -Werror 
 RM			=	rm -rf
-
-#       MANDATORY    #
 
 FILES	=	main \
 			checker \
@@ -29,27 +36,20 @@ OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 
 $(NAME): $(OBJS)
 		@$(CC) -o $@  $^
-		@printf "$(GREEN)Philophers Compiled 😎\n"
+		@printf "Compiled\n"
 
 all: $(NAME)
 
 clean:
-		@printf "$(YELLOW)Deleting the Philophers Objects...\n"
+		@printf "Deleting ...\n"
 		@$(RM) $(OBJS)
-		@printf "$(GREEN)Philophers Objects Deleted 😎 🗑\n"
+		@printf "Deleted \n"
 
 fclean:	clean
-		@printf "$(YELLOW)Deleting Philophers 🔪...\n"
+		@printf "Deleting ...\n"
 		@$(RM) $(NAME)
-		@printf "$(GREEN)Philophers Deleted 😎 🗑 💀\n"
+		@printf "Deleted\n"
 
 re:				fclean all
 
-valgrind: all
-	valgrind --leak-check=full --show-reachable=yes --show-leak-kinds=all --error-limit=no --gen-suppressions=all --track-origins=yes  --log-file=minishell.log ./philo 5 200 200 200
-
 .PHONY:		all clean fclean re valgrind
-
-
-GREEN=\033[0;32m
-YELLOW=\033[0;33m

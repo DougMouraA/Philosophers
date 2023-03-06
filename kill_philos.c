@@ -6,7 +6,7 @@
 /*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 18:02:10 by douglas           #+#    #+#             */
-/*   Updated: 2023/02/25 11:21:21 by douglas          ###   ########.fr       */
+/*   Updated: 2023/03/02 14:45:07 by douglas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	*murder_philos(void *id)
 			pthread_mutex_lock(&philos[0].for_all->cheack_died);
 			philos[0].for_all->died = 1;
 			pthread_mutex_unlock(&philos[0].for_all->cheack_died);
-			printf("%lld %d IS DEAD\n", \
-				time_return(philos[0].for_all->first_time), i + 1);
+			printf("%lld %d died\n", \
+			time_return(philos[0].for_all->first_time), i + 1);
 			return (NULL);
 		}
 		pthread_mutex_unlock(&philos[0].for_all->cheack_time[i]);
